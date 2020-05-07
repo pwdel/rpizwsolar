@@ -42,82 +42,33 @@ So from the example documentation, you put the city id within the call as follow
 ```
 Command line:
 
-$ curl -v  https://api.openweathermap.org/data/2.5/forecast/hourly?id={5015924}&appid={your api key}
+$ curl -v  https://api.openweathermap.org/data/2.5/forecast/hourly?id=5015924&appid={your api key}
 ```
 
-When we tried this, we get redirected toward a 401 error, which mentions that we need to wait a few hours for our API to be verified.
+When we tried this, we get redirected toward a 401 error, which mentions that we need to wait a few hours for our API to be verified.  It turns out that we had to wait a few days for this API to be verified.  Once this was verified, we did another call, and got the following [result in JSON](https://github.com/pwdel/rpizwsolar/blob/master/testresult.json).
 
 ## Types of Forecasts Available
 
 Specifically, they offer a couple different forecasting APIs for free:
 
-* [The OpenWeatherMap Hourly Forecast](https://openweathermap.org/api/hourly-forecast)
-* [The OpenWeatherMap 16 Day Forecast](https://openweathermap.org/forecast16)
+*   [The OpenWeatherMap Hourly Forecast](https://openweathermap.org/api/hourly-forecast)
+*   [The OpenWeatherMap 16 Day Forecast](https://openweathermap.org/forecast16)
+   *   This requires a pro account, so we can't use it.
 
-We can start off by simply evaluating the Hourly Forecast.
+### Hourly Forecast OpenWeather API
 
-## Hourly Forecast OpenWeather API
+We can start off by simply evaluating the Hourly Forecast for free.  We did so in the above section, leading to this [result in JSON](https://github.com/pwdel/rpizwsolar/blob/master/testresult.json).
 
-* Gives us the Cloudcover
+From there, we notice that we have several interesting data columns that we can work with:
 
+*   ```list__dt``` which lists the time in postfix time
+*   ```list__weather__main``` which lists out whether it's clear or cloudy
+*   ```list__clouds__all``` which lists clouds as a numerical percentage of cover
+*   wind speeds and directions
+*   time in readible ISO format
+*   ```list__dt_txt```
+*   sunrise and sunset for the location, listed in GPS coordinates.
 
+# Storing Json Data
 
-### Example JSON API Response
-
-```json
-{
-  "cod": "200",
-  "message": 0.0179,
-  "cnt": 96,
-  "list": [
-    {
-      "dt": 1578412800,
-      "main": {
-        "temp": 284.43,
-        "feels_like": 280.7,
-        "temp_min": 284.24,
-        "temp_max": 284.43,
-        "pressure": 1019,
-        "sea_level": 1019,
-        "grnd_level": 1015,
-        "humidity": 94,
-        "temp_kf": 0.19
-      },
-      "weather": [
-        {
-          "id": 800,
-          "main": "Clear",
-          "description": "clear sky",
-          "icon": "01d"
-        }
-      ],
-      "clouds": {
-        "all": 0
-      },
-      "wind": {
-        "speed": 4.75,
-        "deg": 98.909
-      },
-      "sys": {
-        "pod": "d"
-      },
-      "dt_txt": "2020-01-07 13:00:00"
-    },
-
-    .....
-        ],
-  "city": {
-    "id": 2643743,
-    "name": "London",
-    "coord": {
-      "lat": 51.5085,
-      "lon": -0.1258
-    },
-    "country": "GB",
-    "population": 1000000,
-    "timezone": 0,
-    "sunrise": 1568958164,
-    "sunset": 1569002733
-  }
-}
-```
+https://medium.com/quiq-blog/store-json-logs-on-s3-for-search-and-analytics-using-amazon-athena-b5bb7dbe377f
