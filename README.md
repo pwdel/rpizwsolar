@@ -69,6 +69,6 @@ From there, we notice that we have several interesting data columns that we can 
 *   ```list__dt_txt```
 *   sunrise and sunset for the location, listed in GPS coordinates.
 
-# Storing Json Data
+# Storing JSON Data
 
 https://medium.com/quiq-blog/store-json-logs-on-s3-for-search-and-analytics-using-amazon-athena-b5bb7dbe377f
