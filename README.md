@@ -6,7 +6,13 @@ Solar Remote Monitor Based on Raspberry Pi Zero W
 
 In order to predict when our solar device will run out of power, we need to have an understanding of what the future weather forecast will be, in particular, the cloud cover, and possibly snow and rain.
 
-One interesting weather prediction API we found is the [Open Weather API](https://openweathermap.org/api).
+There are several Weather APIs which allow for drawing forecasting data which we evaluated:
+
+*   [Open Weather API](https://openweathermap.org/api).
+*   [Climacell](https://www.climacell.co/weather-api/pricing/)
+*   [Storm Glass](https://stormglass.io/pricing/)
+*   [Yahoo Weather](https://developer.yahoo.com/weather/)
+
 
 ## Getting the API Key & Executing Calls
 
@@ -45,7 +51,7 @@ Command line:
 $ curl -v  https://api.openweathermap.org/data/2.5/forecast/hourly?id=5015924&appid={your api key}
 ```
 
-When we tried this, we get redirected toward a 401 error, which mentions that we need to wait a few hours for our API to be verified.  It turns out that we had to wait a few days for this API to be verified.  Once this was verified, we did another call, and got the following [result in JSON](https://github.com/pwdel/rpizwsolar/blob/master/testresult.json).
+The GPS Coordinates of Afton, Minnesota are: 44.9027° N, 92.7835° W
 
 ## Types of Forecasts Available
 
