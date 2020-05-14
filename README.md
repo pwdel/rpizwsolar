@@ -11,6 +11,10 @@ There are several Weather APIs which allow for drawing forecasting data which we
 *   [Open Weather API](https://openweathermap.org/api).
 *   [Climacell](https://www.climacell.co/weather-api/pricing/)
 *   [Storm Glass](https://stormglass.io/pricing/)
+   *   You get 50 requests per day.  "All Weather Sources Available"
+   *   [documentation](https://docs.stormglass.io/#/)
+   *   [sources](https://docs.stormglass.io/#/sources) include NOAA, Swedish Meteorological and Hydrological Institute, etc.
+   *   [has a nice dashboard](https://dashboard.stormglass.io/)
 *   [Yahoo Weather](https://developer.yahoo.com/weather/)
 
 
