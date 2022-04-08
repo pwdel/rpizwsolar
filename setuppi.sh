@@ -32,8 +32,19 @@ sudo pip3 install psycopg2
 sudo apt install libpq5 --fix-missing
 
 
+<<<<<<< HEAD
 # ---------------- install cron, pcregrep, systemctl  --------------------------------
+=======
+# ---------------- install  --------------------------------
+
+
+>>>>>>> be9bb0d8be93593ecbb8fcb488cf8cd3ba950e7f
 
 apt-get install -y cron
 
 apt-get install -y pcregrep
+<<<<<<< HEAD
+=======
+
+apt-get install -y systemctl
+>>>>>>> be9bb0d8be93593ecbb8fcb488cf8cd3ba950e7f
