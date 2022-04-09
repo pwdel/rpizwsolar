@@ -1,0 +1,2 @@
+/proc/6435/fd/pipe:[268763]
+/dev/pts/2

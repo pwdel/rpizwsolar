@@ -32,19 +32,20 @@ sudo pip3 install psycopg2
 sudo apt install libpq5 --fix-missing
 
 
-<<<<<<< HEAD
-# ---------------- install cron, pcregrep, systemctl  --------------------------------
-=======
-# ---------------- install  --------------------------------
+# ---------------- install dotenv --------------------------------
+
+# install dotenv on user for compatibility purposes
+pip3 install python-dotenv --user
 
 
->>>>>>> be9bb0d8be93593ecbb8fcb488cf8cd3ba950e7f
+# ---------------- install dotenv --------------------------------
+
+
+pip3 install pytz
+
+
+# ---------------- install cron, pcregrep, systemctl  -------------
 
 apt-get install -y cron
 
 apt-get install -y pcregrep
-<<<<<<< HEAD
-=======
-
-apt-get install -y systemctl
->>>>>>> be9bb0d8be93593ecbb8fcb488cf8cd3ba950e7f
